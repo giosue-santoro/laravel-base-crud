@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css">
-        <title>Crud & Birr</title>
-    </head>
-<body>
+@extends('base');
 
+@section('title', 'Index')
+
+@section('content')
     <table class="table thead-light">
         <thead>
         <tr>
@@ -24,17 +18,14 @@
                 <tr>
 
                     <th scope="row">{{ $beer->id }}</th>
-                    <td>{{ $beer->brand }}</td>
+                    <td><a href="{{ route('beers.show', ['beer' => $beer->id]) }}">{{ $beer->brand }}</a></td>
                     <td>{{ $beer->country }}</td>
-                    <td>{{ $beer->price }}</td>
+                    <td>{{ $beer->price }} €</td>
                     <td><img src="{{ $beer->image }}" width="150px"></td>
 
                 </tr>
             @endforeach
         </tbody>
     </table>
-
-
-</body>
-</html>
+@endsection
 
