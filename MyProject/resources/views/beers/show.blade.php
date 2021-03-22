@@ -10,7 +10,7 @@
             <h5 class="card-title">{{$beer->brand}}</h5>
             <p class="card-text">{{$beer->country}}</p>
             <p class="card-text">{{$beer->price}} €</p>
-            <a href="/beers" class="btn btn-primary">Return</a>
+            <a href="/beers" class="btn btn-primary">Edit</a>
             </div>
         </div>
     </div>
